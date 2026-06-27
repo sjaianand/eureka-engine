@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eureka Engine | Executive Coaching & Belief Architecture</title>
+    
+    <!-- Premium Typography via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Apple-Inspired Premium Minimalist Design System */
+        :root {
+            --bg-color: #ffffff;
+            --text-dark: #000000;
+            --text-primary: #1d1d1f; 
+            --text-secondary: #86868b; 
+            --border-light: rgba(0, 0, 0, 0.08);
+            --radius-soft: 24px; 
+            --btn-color: #0071e3; 
+            
+            /* Premium Executive Color Splash Gradients Over Images */
+            --gradient-approach: linear-gradient(145deg, rgba(245, 245, 247, 0.88) 0%, rgba(227, 232, 248, 0.92) 100%); 
+            --gradient-about: linear-gradient(135deg, #ffffff 0%, #f4f5f6 100%);
+            --gradient-methodology: linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(249, 245, 240, 0.96) 100%); 
+            --gradient-tiers: linear-gradient(145deg, rgba(245, 245, 247, 0.9) 0%, rgba(235, 245, 242, 0.92) 100%); 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        /* Navigation Bar */
+        nav {
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            color: var(--text-dark);
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 2.5rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: var(--text-dark);
+        }
+
+        /* Hero Section with Soft Radial Light Burst */
+        header {
+            padding: 11rem 0 9rem 0;
+            text-align: center;
+            background: radial-gradient(circle at 50% 30%, #f0f3fa 0%, #ffffff 65%);
+            position: relative;
+        }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.4rem;
+            font-weight: 300;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+            color: var(--text-dark);
+        }
+        .hero-tag {
+            font-size: 1.45rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 3.5rem auto;
+            font-weight: 300;
+            letter-spacing: -0.2px;
+        }
+
+        /* Interactive UI Elements */
+        .btn {
+            display: inline-block;
+            background-color: var(--btn-color);
+            color: #ffffff;
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: -0.1px;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .btn:hover {
+            background-color: #0077ed;
+            transform: scale(1.015);
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.2);
+        }
+
+        /* Structural Grid Elements */
+        section {
+            padding: 8.5rem 0;
+            position: relative;
+        }
+        .section-title {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.8px;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 4rem;
+        }
+
+        /* Section 1: Approach (Featuring Local Secure Image Asset) */
+        #about-intent {
+            background: var(--gradient-approach), url('hero-bg.jpg') no-repeat center center/cover;
+            border-radius: 32px;
+            margin: 0 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+        }
+        .empathy-block {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.35rem;
+            color: #1d1d1f;
+            font-weight: 300;
+        }
+        .empathy-block p {
+            margin-bottom: 2rem;
+        }
+        .empathy-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            font-style: italic;
+            margin-top: 3.5rem;
+            line-height: 1.3;
+        }
+
+        /* Section 2: Biography with Local Profile Asset */
+        #biography {
+            background: var(--gradient-about);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .bio-layout {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 4.5rem;
+            align-items: start;
+        }
+        .bio-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-soft);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            background-color: #eaeaea;
+        }
+        .bio-image-wrapper img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .bio-text-side h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--btn-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .bio-text-side h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+        .bio-content p {
+            color: #424245;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Section 3: Methodology (Featuring Local Structural Architecture Overlay) */
+        #framework {
+            background: var(--gradient-methodology), url('methodology-bg.jpg') no-repeat center center/cover;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        .framework-card {
+            background: rgba(255, 255, 255, 0.88);
+            padding: 3.5rem 2.5rem;
+            border-radius: var(--radius-soft);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .framework-card:hover {
+            transform: translateY(-4px);
+            background: #ffffff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+        }
+        .card-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--btn-color);
+            margin-bottom: 1.5rem;
+            display: block;
+            font-weight: 300;
+        }
+        .framework-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
+        }
+        .framework-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+        .quote-box {
+            text-align: center;
+            max-width: 800px;
+            margin: 6rem auto 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 3rem;
+            border-radius: var(--radius-soft);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.1rem;
+            line-height: 1.45;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        /* Section 4: Service Tiers (Featuring Local Glassboard Meeting Room Overlay) */
+        #packages {
+            background: var(--gradient-tiers), url('tiers-bg.jpg') no-repeat center center/cover;
+            border-radius: 32px;
+            margin: 0 1.5rem;
+        }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .package-card {
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            padding: 4rem 2.5rem;
+            border-radius: var(--radius-soft);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+        }
+        .package-card.featured {
+            background: #ffffff;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 113, 227, 0.15);
+        }
+        .package-header h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+        .package-meta {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+        }
+        .package-body p {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        .package-body ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        .package-body li {
+            margin-bottom: 1.1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .package-body li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--btn-color);
+            font-size: 1.2rem;
+            top: -2px;
+        }
+        .package-card .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .package-card.featured .btn {
+            background-color: var(--text-dark);
+        }
+        .package-card.featured .btn:hover {
+            background-color: #000000;
+        }
+
+        /* Section 5: Executive Form Block */
+        #contact {
+            background-color: #ffffff;
+        }
+        .form-container {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .executive-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            padding-left: 4px;
+        }
+        .form-group label .optional {
+            color: var(--text-secondary);
+            font-weight: 300;
+            font-size: 0.8rem;
+        }
+        .form-control {
+            background-color: #f5f5f7;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            background-color: #ffffff;
+            border-color: var(--btn-color);
+            box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 140px;
+        }
+        .form-submit-btn {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            text-align: center;
+            justify-content: center;
+            margin-top: 1rem;
+            padding: 1.1rem;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 5rem 0;
+            background-color: #f5f5f7;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            .bio-layout { grid-template-columns: 1fr; gap: 3rem; }
+            .bio-image-wrapper { max-width: 420px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .hero-tag { font-size: 1.15rem; }
+            section { padding: 5.5rem 0; }
+            .section-title { font-size: 2rem; }
+            .nav-links { display: none; }
+            .form-row { grid-template-columns: 1fr; gap: 1.5rem; }
+            #about-intent, #framework, #packages { margin: 0; border-radius: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-inner">
+            <div class="brand">Eureka Engine</div>
+            <div class="nav-links">
+                <a href="#about-intent">Approach</a>
+                <a href="#biography">About</a>
+                <a href="#framework">Methodology</a>
+                <a href="#packages">Offerings</a>
+                <a href="#contact">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container header-content">
+            <h1>FROM COMPLEXITY TO CLARITY.</h1>
+            <p class="hero-tag">Elite executive coaching bridging enterprise-scale strategic success with profound personal alignment.</p>
+            <a href="#contact" class="btn">Initiate a Conversation</a>
+        </div>
+    </header>
+
+    <section id="about-intent">
+        <div class="container">
+            <div class="empathy-block">
+                <p>You have checked every box. You lead high-impact teams, navigate vast organizational architectures, and reliably deliver exceptional metrics. To the outside world, it is a masterclass in professional success.</p>
+                <p>Yet internally, the friction is growing. The weight of continuous execution can cloud the larger horizon, leaving high-performing leaders asking an essential question: <em>What unfolds next?</em></p>
+                <p class="empathy-highlight">This is the critical transition from Success to Significance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="biography">
+        <div class="container">
+            <div class="bio-layout">
+                <div class="bio-image-wrapper">
+                    <!-- Local Secure Profile Image Reference -->
+                    <img src="profile.jpg" alt="Executive Leadership Portrait">
+                </div>
+                <div class="bio-text-side">
+                    <h2>Founder & Principal</h2>
+                    <h3>About Jai Sekar</h3>
+                    <div class="bio-content">
+                        <p>Are you feeling accomplished but unfulfilled? Successful on paper, yet stuck in a rut? You’ve checked every box and done everything “right.” But does it feel like something is missing—in your work or life?</p>
+                        <p>I’ve been there. My own search for clarity began years ago when I sought a coach to navigate my own high-stakes career. I walked away from that experience knowing something vital was missing: a bridge between hard-edged business strategy and the human being behind the corporate title.</p>
+                        <p>For nearly 25 years, I’ve led teams and shaped strategy across continents—from India, France, and the UK to the USA. My background spans large-scale technology delivery leadership at Capgemini, pure-play management consulting at Booz & Company (now Strategy&), and driving greenfield business segments at the scale and velocity of Amazon Web Services (AWS).</p>
+                        <p>Today, I partner with a select group of global clients in an elite coaching capacity. My strength lies in this dual perspective. I have been in the arena for decades building solutions and growing multi-million dollar businesses in high uncertainty, while bringing the formal credentials and structured support of the International Coaching Federation (ICF).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="framework">
+        <div class="container">
+            <h2 class="section-title">Core Methodology</h2>
+            <p class="section-subtitle">A balanced scaffolding designed for complex leadership trajectories.</p>
+            <div class="grid-3">
+                <div class="framework-card">
+                    <span class="card-num">01</span>
+                    <h3>SEE</h3>
+                    <p>Uncover hidden operational blind spots, challenge long-held core assumptions, and bring absolute transparency to your current professional architecture.</p>
+                </div>
+                <div class="framework-card">
+                    <span class="card-num">02</span>
+                    <h3>SHIFT</h3>
+                    <p>Re-architect deeply ingrained limiting beliefs, realign your primary values, and purposefully expand your executive vision.</p>
+                </div>
+                <div class="framework-card">
+                    <span class="card-num">03</span>
+                    <h3>SUSTAIN</h3>
+                    <p>Embed strategic, high-impact habits, construct clear accountability systems, and confidently scale your systemic long-term legacy.</p>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                <p>"This isn't therapy; it's belief architecture for enterprise leaders."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages">
+        <div class="container">
+            <h2 class="section-title">Service Tiers</h2>
+            <p class="section-subtitle">Bespoke engagement frameworks tailored to your current horizon.</p>
+            <div class="packages-grid">
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>The Catalyst</h3>
+                        <div class="package-meta">Targeted Strategic Breakthrough</div>
+                    </div>
+                    <div class="package-body">
+                        <p><strong>Ideal For:</strong> Leaders facing an immediate, high-stakes career junction, corporate restructuring, or critical negotiation.</p>
+                        <ul>
+                            <li>Focused high-intensity strategy mapping</li>
+                            <li>Direct decision-making framework architecture</li>
+                            <li>Immediate execution roadmap development</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn">Select Focus</a>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-header">
+                        <h3>The Transformation</h3>
+                        <div class="package-meta">Comprehensive Executive Growth</div>
+                    </div>
+                    <div class="package-body">
+                        <p><strong>Ideal For:</strong> Established executives looking to completely bridge executive performance with deep personal alignment.</p>
+                        <ul>
+                            <li>Deep-dive core belief and value architecture mapping</li>
+                            <li>Ongoing systemic accountability check-ins</li>
+                            <li>Unlimited asynchronous advisory support access</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn">Select Focus</a>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>The Legacy Builder</h3>
+                        <div class="package-meta">Long-Term Impact Alignment</div>
+                    </div>
+                    <div class="package-body">
+                        <p><strong>Ideal For:</strong> C-suite leaders and founders aiming to maximize organizational influence while securing an enduring personal legacy.</p>
+                        <ul>
+                            <li>Comprehensive organizational ecosystem evaluation</li>
+                            <li>Strategic legacy and succession blueprinting</li>
+                            <li>Bespoke advisory touchpoints throughout the year</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn">Select Focus</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Begin the Conversation</h2>
+                <p class="section-subtitle" style="margin-bottom: 3.5rem;">Submit your strategic details below to evaluate alignment and scoping metrics.</p>
+                
+                <form action="https://api.web3forms.com/submit" method="POST" class="executive-form">
+                    <!-- Live Verified Web3Forms Key Linkage -->
+                    <input type="hidden" name="access_key" value="68feeabf-bb4b-47e4-9520-237215f2a2f5">
+                    <input type="hidden" name="subject" value="New Executive Inquiry - Eureka Engine">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Executive Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="name@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="optional">(Optional)</span></label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company / Organization <span class="optional">(Optional)</span></label>
+                            <input type="text" id="company" name="company" class="form-control" placeholder="Enterprise Inc.">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location <span class="optional">(Optional)</span></label>
+                        <input type="text" id="location" name="location" class="form-control" placeholder="City, State or Country">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="seeking">What are you seeking clarity on? <span class="optional">(Optional)</span></label>
+                        <textarea id="seeking" name="seeking_clarity" class="form-control" placeholder="Briefly share your top-level context or the primary friction area you wish to navigate..."></textarea>
+                    </div>
+
+                    <api button type="submit" class="btn form-submit-btn">Submit Briefing Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Eureka Engine Coaching LLC. All professional credentials held globally via the International Coaching Federation (ICF).</p>
+        </div>
+    </footer>
+
+</body>
+</html>
